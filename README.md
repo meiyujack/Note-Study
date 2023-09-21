@@ -1,5 +1,4 @@
-# Wuhan_Pepsi
-武汉百事可乐分享仓库
+# Python Web_APIFlask
 ___
 本系列教程旨在从大的方面讲解如何运用Python制作一个网站,具体Python细节不做过多深究，特别是Python基础。
 ## Chapter 0 工欲善其事，必先利其器
