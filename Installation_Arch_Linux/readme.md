@@ -54,7 +54,11 @@
 4. 安装微码。pacman -Sy intel-ucode （pacman -Sy amd-ucode）
 5. grub-mkconfig -o /boot/grub/grub.cfg
 
-## 9 重启
+## 9 设置root密码
+1. passwd
+2. 输入密码
+
+## 10 重启
 1. exit 退出至live环境
 2. umount -R /mnt 取消挂载
 3. reboot
