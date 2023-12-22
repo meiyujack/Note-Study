@@ -63,13 +63,13 @@
 2. pacman -Sy networkmanager
 3. systemctl enable --now NetworkManager(一定注意大小写，这个服务，跟安装不一样，若live环境进入启用不行就后面直接进去开启，待试。本管理工具可忽略第二章,若无视本小节，如果没有有线网络后面无法联网。)
 
-## 10 重启
+## 11 重启
 1. exit 退出至live环境
 2. umount -R /mnt 取消挂载
 3. reboot
 
 # 第二章 基本配置 Arch Linux
-## 1. 网络配置
+## 0. 网络配置(可选，无NetworkManager,不推荐)
 1. pacman -Sy iwd
 2. systemctl enable iwd && systemctl start iwd
 3. vim /etc/iwd/main.conf
@@ -77,3 +77,30 @@
     [General]
     EnableNetworkConfiguration=true
 4. systemctl enable --now systemd-resolved.service
+## 1. 配置账户
+1. pacman -Sy sudo
+2. useradd -m -G wheel -s /bin/bash 你的账户名
+3. vim /etc/sudoers 取消%wheel ALL=(ALL:ALL) All 这一行的注释(#)，保存退出（wq!）
+
+## 2. 配置桌面（xfce4）
+1. pacman -Sy xfce4 xfce4-goodies lxdm gvfs
+2. vim /etc/lxdm/lxdm.conf 取消这一行注释并修改为session=/usr/bin/startxfce4
+3. sudo systemctl enable lxdm
+4. reboot
+
+## 3. 设置中文界面
+1. vim ~/.profile 键入export LANG=zh_CN.UTF-8，保存退出
+2. pacman -S wqy-microhei
+3. reboot
+
+## 4. 设置中文输入法
+1. sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk
+2. vim /etc/environment 键入以下内容
+```
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+```
+3. reboot
