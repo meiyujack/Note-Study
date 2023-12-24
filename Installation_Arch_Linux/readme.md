@@ -73,9 +73,10 @@
 1. pacman -Sy iwd
 2. systemctl enable iwd && systemctl start iwd
 3. vim /etc/iwd/main.conf
-
+```
     [General]
     EnableNetworkConfiguration=true
+```
 4. systemctl enable --now systemd-resolved.service
 ## 1. 配置账户
 1. pacman -Sy sudo
@@ -92,15 +93,20 @@
 1. vim ~/.profile 键入export LANG=zh_CN.UTF-8，保存退出
 2. pacman -S wqy-microhei
 3. reboot
+4. 终端字体异常需在终端设置中选取semibold字体即可
 
 ## 4. 设置中文输入法
 1. sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk
 2. vim /etc/environment 键入以下内容
 ```
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-SDL_IM_MODULE=fcitx
-GLFW_IM_MODULE=ibus
+    GTK_IM_MODULE=fcitx
+    QT_IM_MODULE=fcitx
+    XMODIFIERS=@im=fcitx
+    SDL_IM_MODULE=fcitx
+    GLFW_IM_MODULE=ibus
 ```
 3. reboot
+
+## 5. 设置声音
+1. 如果没有声音，aplay -L 检查是否系统检测到声卡，如果没有，sudo dmesg | grep -E "snd|sof"看看是否缺少驱动, essx8336会有此问题。 https://github.com/thesofproject/sof-bin/ 安装即可(适用此种特例检查及解决情形)。
+2. pacman -S pulseaudio 完后重启，任务栏音量图标应该已经开启，这个时候键盘的多媒体键也可全局控制，并不需要xbindkeys。
