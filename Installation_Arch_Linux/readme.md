@@ -61,7 +61,7 @@
 ## 10 设置主机名及配置网络管理软件
 1. vim /etc/hostname 新建文件，写入主机名，如XXComputer，保存退出。
 2. pacman -Sy networkmanager network-manager-applet
-3. systemctl enable --now NetworkManager(*一定注意大小写*，这个服务，跟安装不一样，live环境进入启用有用但不支持。本管理工具可忽略第二章第0节,若无视本小节，如果没有有线网络后面无法联网。)
+3. systemctl enable --now NetworkManager(**一定注意大小写**，这个服务，跟安装不一样，live环境进入启用有用但不支持。本管理工具可忽略第二章第0节,若无视本小节，如果没有有线网络后面无法联网。)
 
 ## 11 重启
 1. exit 退出至live环境
