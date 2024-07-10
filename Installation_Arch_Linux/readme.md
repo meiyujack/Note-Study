@@ -115,3 +115,7 @@
 ## 5. 设置声音
 1. 如果没有声音，aplay -L 检查是否系统检测到声卡（安装alsa-utils），如果没有，sudo dmesg | grep -E "snd|sof"看看是否缺少驱动, essx8336会有此问题。 https://github.com/thesofproject/sof-bin/ 安装即可(适用此种特例检查及解决情形,新电脑sof需要安装sof-firmware驱动,某些声卡需要安装alsa-firmware驱动)。
 2. pacman -S pulseaudio 完后重启，任务栏音量图标应该已经开启（xfce4任务栏添加新项目），这个时候键盘的多媒体键也可全局控制，并不需要xbindkeys。
+
+## 6. 与服务器对时
+1. 安装ntp sudo pacman -S ntp
+2. 启用并运行ntpd sudo systemctl enable --now ntpd
