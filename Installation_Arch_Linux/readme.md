@@ -124,3 +124,10 @@
 1. sudo pacman -Sy bluez blueman
 2. sudo systemctl enable --now bluetooth.service
 3. reboot
+
+## 8. 增加Windows启动项（可选）
+  目的是让GRUB去收录Windows启动，不用临时调节启动项用Windows Manager去引导
+1. 安装软件包os-prober。sudo pacman -S os-prober
+2. 修改grub配置文件。sudo vim /etc/default/grub 取消GRUB_DISABLE_PROBER=false前的#号
+3. 挂载EFI系统分区。 mount P1 /boot
+4. sudo grub-mkconfig -o /boot/grub/grub.cfg
