@@ -33,7 +33,7 @@
 4. 启用交换空间。swapon 交换空间的磁盘分区P3。 swapon P3
 
 ## 5 安装
-~~0. 更新软件库引擎，确保当下网络是最快最优解。pacman -Sy pacman-mirrorlist会生成/etc/pacman.d/mirrorlist.pacnew，由此更新/etc/pacman.d/mirrorlist。会直接影响未来Arch Linux的软件更新速率。~~
+0. 更新软件库引擎，确保当下网络是最快最优解。pacman -Sy pacman-mirrorlist会更新/etc/pacman.d/mirrorlist。否则直接影响未来Arch Linux的软件更新速率甚至超时。
 1. 需安装archlinux-keylinux。pacman -Sy archlinux-keyring
 2. pacstrap -K /mnt base linux linux-firmware 使用 pacstrap脚本，安装 base包、软件包和 Linux 内核以及常规硬件的固件。
 
