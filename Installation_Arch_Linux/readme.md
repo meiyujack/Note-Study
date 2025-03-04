@@ -90,7 +90,7 @@
 
 ## 2. 配置桌面（xfce4）
 1. pacman -Sy xfce4 xfce4-goodies lxdm gvfs
-2. vim /etc/lxdm/lxdm.conf 取消这一行注释并修改为session=/usr/bin/startxfce4
+2. sudo vim /etc/lxdm/lxdm.conf 取消这一行注释并修改为session=/usr/bin/startxfce4
 3. sudo systemctl enable lxdm
 4. reboot
 
