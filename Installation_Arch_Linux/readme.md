@@ -96,7 +96,7 @@
 
 ## 3. 设置中文界面
 1. vim ~/.profile 键入export LANG=zh_CN.UTF-8，保存退出
-2. pacman -S wqy-bitmapfont
+2. pacman -S wqy-microhei
 3. reboot
 4. 终端字体异常需在终端设置中选取semibold字体即可
 
