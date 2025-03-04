@@ -86,7 +86,7 @@
 ## 1. 配置账户
 1. pacman -Sy sudo
 2. useradd -m -G wheel -s /bin/bash 你的账户名
-3. vim /etc/sudoers 取消%wheel ALL=(ALL:ALL) All 这一行的注释(#)，保存退出（wq!）
+3. sudo vim /etc/sudoers 取消%wheel ALL=(ALL:ALL) All 这一行的注释(#)，保存退出（wq!）
 
 ## 2. 配置桌面（xfce4）
 1. pacman -Sy xfce4 xfce4-goodies lxdm gvfs
