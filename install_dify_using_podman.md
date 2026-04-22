@@ -11,4 +11,5 @@ Environment=NO_PROXY=localhost,127.0.0.1,::1
  5. git clone https://github.com/langgenius/dify.git
  6. cd dify/docker
  7. cp .env.example .env
- 8. podman compose up -d
+ 8. 修改docker-compose.yaml及.env的nginx端口80为8080,443为8443
+ 9. podman compose up -d
